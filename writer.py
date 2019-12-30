@@ -48,7 +48,7 @@ except:
     print("Integers only!")
     exit()
 
-#User input for min words per line:
+#User input for min words per paragraph:
 def q4():
     x = input("Minimum number of words per paragraph? ")
     return x
@@ -59,7 +59,7 @@ except:
     exit()
 
 
-#User input for max words per line:
+#User input for max words per paragraph:
 def q5():
     x = input("Maximum number of words per paragraph? ")
     return x
@@ -88,9 +88,8 @@ wordlist.close()
 def para_list():
     w_para = random.randint(min_w, max_w)
     x = []
-    while w_para > 0:
+    for _ in range(w_para):
         x.append(random.randint(1,source_count))
-        w_para -= 1
     return x
 
 def para_mesh():
@@ -98,12 +97,13 @@ def para_mesh():
     paragraph = []
     for i in num_list:
         paragraph.append(master_list[i])
+#alphabetize, otherwise manipulate the list:
+#        paragraph.sort()
     paragraph = ' '.join(paragraph).lower()
     print(paragraph + '\n')
     output.write(paragraph + '\n')
 
-while art_length > 0:
+for _ in range(art_length):
     para_mesh()
-    art_length -= 1
 
 output.close()
