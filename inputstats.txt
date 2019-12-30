@@ -1,0 +1,8 @@
+#Studying statistical language modeling of input text
+
+Blanket rules:
+-never end a sentence with word:
+  -the, a
+  -etc
+-always capitalize after ., !. ?
+-etc
